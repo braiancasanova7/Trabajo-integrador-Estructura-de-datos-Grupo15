@@ -1,0 +1,44 @@
+
+class Usuario ():
+    def suario():
+        def __init__(self):
+            self.nombre = str(input("ingrese nombre"))
+            self.correo = input("ingrese correo")
+            self.contrasenia = input("ingrese contrasenia")
+        def get_nombre(self):
+            return self.nombre
+        
+        def get_correo(self):
+            return self.correo
+        def get_contrasenia(self):
+            return self.contrasenia
+        
+    def Info_personal(self):
+        print("Nombre: {self.nombre}")
+        print("Correo: {self.correo}")
+
+servidor = []
+
+salir = False
+while not salir:
+    print("Eliga una opcion") 
+    print("1 - Ingresar")
+    print("2 - salir")
+    opcion = int(input("Opcion elegida: "))
+    
+    if opcion == 1:
+        print("\nAgregar Usuario")
+        servidor.append(Usuario())
+        print("Usuario agregado correctamente")
+    elif opcion == 2:
+        s=str(input("ingresar S/s para salir"))
+        if s=='S' or s=='s': 
+            print("¡Hasta pronto!")
+            salir=False
+
+    if not salir:
+        input("presione enter para continuar")
+
+
+
+    
