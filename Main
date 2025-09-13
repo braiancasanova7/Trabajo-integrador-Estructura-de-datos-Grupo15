@@ -1,34 +1,68 @@
+from abc import ABC, abstractmethod
+#interfaz del correo, se puede modificar como se les ocurra (le robe la idea al profe jijiji)
+class Interfaz_correo(ABC):
+    def __init__(self):
+        pass
 
-class Usuario ():
-    def suario():
-        def __init__(self):
-            self.nombre = str(input("ingrese nombre"))
-            self.correo = input("ingrese correo")
-            self.contrasenia = input("ingrese contrasenia")
-        def get_nombre(self):
-            return self.nombre
+    @abstractmethod
+    def enviarmsg(self,destinatario, asunto, cuerpo):
+        pass
+
+    @abstractmethod
+    def recibirmsg(self):
+        pass
+
+    @abstractmethod
+    def eliminarmsg(self):
+        pass
+
+    @abstractmethod
+    def listar_msg(self, carpeta):
+        pass
+
+
+#lo unico que se me ocurre con la clase del servidor es darle estas funciones para agregar un usuario :/
+class Servidor():
+    def __init__(self):
+        self.set_nombre = str(input("ingrese nombre"))
+        self.set_correo = input("ingrese correo")
+        self.set_contrasenia = input("ingrese contrasenia")
+
+
+class Usuario (Interfaz_correo):
+    def __init__(self):
+        pass
+
+    def get_nombre(self):
+        return self.nombre
         
-        def get_correo(self):
-            return self.correo
-        def get_contrasenia(self):
-            return self.contrasenia
-        
+    def get_correo(self):
+        return self.correo
+    
+    def get_contrasenia(self):
+        return self.contrasenia
+    
+
     def Info_personal(self):
         print("Nombre: {self.nombre}")
         print("Correo: {self.correo}")
 
-servidor = []
+# la lista es lo que se me ocurrio para ir guardando usuarios
+server = []
 
 salir = False
+
+#Menu para comprobar que funcione todo, NADA del codigo es permanente 
 while not salir:
     print("Eliga una opcion") 
-    print("1 - Ingresar")
+    print("1 - Agregar Usuario")
+    print("2 - listar usuario")
     print("2 - salir")
     opcion = int(input("Opcion elegida: "))
     
     if opcion == 1:
-        print("\nAgregar Usuario")
-        servidor.append(Usuario())
+        print("Agregar Usuario")
+        server.append(Servidor())
         print("Usuario agregado correctamente")
     elif opcion == 2:
         s=str(input("ingresar S/s para salir"))
