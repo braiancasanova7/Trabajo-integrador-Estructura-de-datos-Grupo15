@@ -1,8 +1,8 @@
 from typing import Dict, List
-from Usuario import Usuario
-from Mensaje import Mensaje
-from Carpeta import Carpeta
-from interfaz_correo import Interfaz_correo
+from .Usuario import Usuario
+from .Mensaje import Mensaje
+from .Carpeta import Carpeta
+from .interfaz_correo import Interfaz_correo
 
 class GestorCorreo:
     """
